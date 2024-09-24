@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>THE HORSE DETECTOR</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="icon" href="Videos and Images/hor2.png" sizes="32x32" type="image/png" />
+  </head>
+  <body>
+    <div class="game-container">
+      <div class="question" id="question"></div>
+      <div class="answers">
+        <button class="answer-btn" id="yesBtn" onclick="nextQuestion('yes')">
+          YES
+        </button>
+        <button class="answer-btn" id="noBtn" onclick="nextQuestion('no')">
+          NO
+        </button>
+      </div>
+      <img
+        id="questionImage"
+        src=""
+        alt="Question Image"
+        style="display: none"
+      />
+
+      <!-- Progress Tracker (Hidden by default) -->
+      <div id="progressTracker" class="progress-tracker" style="display: none">
+        You have unlocked 0/6 questions.
+      </div>
+
+      <!-- Back Button (Hidden by default) -->
+      <button
+        id="backButton"
+        class="back-btn"
+        style="display: none"
+        onclick="restartGame()"
+      >
+        RESTART GAME
+      </button>
+    </div>
+
+    <!-- ESC Key Label -->
+    <div class="esc-label" id="escLabel">[ESC] AND [M] TWICE TO TOGGLE</div>
+
+    <!-- Mute/Unmute Button -->
+    <div class="mute-btn" id="muteButton" onclick="toggleMute()">🔊</div>
+
+    <!-- User Manual (Hidden by default) -->
+    <div class="user-manual" id="userManual">
+      <div class="manual-content">
+        <h2>Instruction for Player</h2>
+        <p>
+          Welcome to the HORSE DETECTOR! In this game, each answer you choose
+          will lead you down a different path, so choose wisely! Press 'YES' or
+          'NO' to navigate through the questions.
+        </p>
+        <p>To hide this manual, press the ESC key again.</p>
+        <p>Press M to toggle the AUDIO, HEAR TIL THE END and have fun</p>
+
+        <!-- Video at the bottom -->
+        <video id="manualVideo" width="400" autoplay loop muted>
+          <source src="Videos and Images/Horsee.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+      </div>
+    </div>
+
+    <!-- Audio Element -->
+    <audio id="backgroundAudio" loop>
+      <source src="Videos and Images/BGA3.mp3" type="audio/mp3" />
+    </audio>
+
+    <script src="script.js"></script>
+    <script src="p5.sound.js"></script>
+    <script src="p5.sound.min.js"></script>
+  </body>
+</html>
